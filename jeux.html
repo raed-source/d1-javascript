@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>devoir 1 js</title>
+  </head>
+
+  <body>
+    <p>entrez un nombre entre 1 et 100</p>
+    <!-- Exercice 1 -->
+    <div class="form">
+      Entrez un choix: <input type="text" id="choix" />
+      <input type="submit" value="test" id="test" />
+    </div>
+
+    <script>
+  
+      //generer un nombre Exercice 2
+      var rand = Math.floor(Math.random() * 10 + 1);
+
+      // nombrs d'essais
+      var nbEssais = 1;
+
+      document.getElementById("test").onclick = function () {
+        var choix = document.getElementById("choix").value;
+        if(isNaN(Number(choix))){
+            alert(" Vous devez indiquer un nombre ! ");
+        }
+        else if (choix == rand) {
+          alert(" Vous avez gagné ! " + nbEssais + " choix ");
+        } else if (choix > rand) {
+          nbEssais++;
+          alert(" Le nombre indiqué est trop grand");
+        } else {
+          nbEssais++;
+          alert(" Le nombre indiqué est trop petit");
+        }
+        if(nbEssais==8){
+            alert("vous avez perdu");
+            
+        }
+      };
+    </script>
+  </body>
+</html>
